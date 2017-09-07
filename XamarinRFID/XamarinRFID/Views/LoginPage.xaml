@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinRFID"
+             x:Class="XamarinRFID.LoginPage">
+
+  <Grid Padding="10,0,20,40">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="3*" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="2*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="3*" />
+      <ColumnDefinition Width="7*" />
+    </Grid.ColumnDefinitions>
+
+    <Image Source="logo.png"
+           Grid.Row="0"
+           Grid.Column="0"
+           Grid.ColumnSpan="2"  />
+    <Label Text="User name:"
+           Grid.Row="1"
+           Grid.Column="0"
+           FontSize="Small"
+           HorizontalTextAlignment="Center"
+           VerticalTextAlignment="Center" />
+    <Entry Grid.Row="1"
+           Grid.Column="1"
+             VerticalOptions = "LayoutOptions.Center"
+              HorizontalOptions = "LayoutOptions.FillAndExpand" 
+           Text="{Binding Username}"
+          />
+    <Label Text="Password:"
+           Grid.Row="2"
+           Grid.Column="0"
+           FontSize="Small"
+           HorizontalTextAlignment="Center"
+           VerticalTextAlignment="Center" />
+    <Entry Grid.Row="2"
+           Grid.Column="1"
+           VerticalOptions = "LayoutOptions.Center"
+           HorizontalOptions = "LayoutOptions.FillAndExpand"
+           IsPassword="True"
+           Text="{Binding Password}"
+          />
+    <Button Text="Login"
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            VerticalOptions = "LayoutOptions.End"
+            Command="{Binding ShowMenuPageCommand}"
+           />
+    <Label Text="Don't have an account?"
+         Grid.Row="5"
+         Grid.Column="0"
+         FontSize="Micro"
+         HorizontalTextAlignment="Center"
+         VerticalTextAlignment="Center" />
+    <Button Text="Signup"
+            Grid.Row="5"
+            Grid.Column="1"
+            BackgroundColor="Transparent"
+            Command ="{Binding ShowSignUpCommand}"
+          />
+  </Grid>
+
+</ContentPage>

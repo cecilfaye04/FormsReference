@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinRFID"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="XamarinRFID.LocateBagPage">
+
+  <Grid Padding="20,50,20,40" RowSpacing="30">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="7*" />
+      <ColumnDefinition Width="3*" />
+    </Grid.ColumnDefinitions>
+
+    <Entry Grid.Row="0"
+           Grid.Column="0"
+           VerticalOptions = "LayoutOptions.Center"
+           HorizontalOptions = "LayoutOptions.FillAndExpand"
+           Placeholder="Input Bagtag no."
+           Text="{Binding SearchEntry}"/>
+    
+    <Button Text="Locate"
+             Grid.Row="0"
+             Grid.Column="1"
+            x:Name="btnLocate"
+            Command="{Binding ShowBagLocationCommand}"/>
+
+    <local:MyMap Grid.Row="1" Grid.Column="0"
+      Grid.ColumnSpan="2" x:Name="MyLocationMap" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+         IsShowingUser="true" MapType="Street"  />
+
+    <Label Text="Last seen bag GPS Coordinates: 162.052374, 121.052374"
+      Grid.Row="2"
+      Grid.Column="0"
+       Grid.ColumnSpan="2"
+      FontSize="Small"
+      HorizontalTextAlignment="Center"
+      VerticalTextAlignment="Center" />
+
+
+
+  </Grid>
+</ContentPage>

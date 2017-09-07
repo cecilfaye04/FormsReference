@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinRFID"
+             x:Class="XamarinRFID.Views.ScanBagtagPage">
+
+
+  <Grid Padding="20,50,20,40" RowSpacing="30">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="5*" />
+      <ColumnDefinition Width="5*" />
+    </Grid.ColumnDefinitions>
+
+
+    <Picker Grid.Row="0" Grid.Column="0" x:Name="IndustryTypePicker1"  HorizontalOptions="FillAndExpand" Title="Select Scan point">
+      <Picker.Items>
+        <x:String>Scan point 1</x:String>
+        <x:String>Scan point 2</x:String>
+        <x:String>Scan point 3</x:String>
+        <x:String>Scan point 4</x:String>
+        <x:String>Scan point 5</x:String>
+      </Picker.Items>
+    </Picker>
+
+    <Entry Grid.Row="0"
+           Grid.Column="1"
+           Placeholder="Bagtag no."
+           VerticalOptions = "LayoutOptions.Center"
+           HorizontalOptions = "LayoutOptions.FillAndExpand"
+           Text="{Binding BagTagSearch}"/>
+
+    <BoxView Grid.Row="2" Grid.Column="0"
+           Grid.ColumnSpan="2" 
+           VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+           />
+
+    <Button Text="Barcode Scan"
+          Grid.Row="1"
+          Grid.Column="0"
+          VerticalOptions = "LayoutOptions.End" />
+    <Button Text="RFID Scan"
+          Grid.Row="1"
+          Grid.Column="1"
+          VerticalOptions = "LayoutOptions.End" />
+    <Label Text="Bag GPS Coordinates: 162.052374, 121.052374"
+           Grid.Row="3"
+           Grid.Column="0"
+           Grid.ColumnSpan="2"
+           FontSize="Small"
+           HorizontalTextAlignment="Center"
+           VerticalTextAlignment="Center" />
+    
+  </Grid>
+</ContentPage>

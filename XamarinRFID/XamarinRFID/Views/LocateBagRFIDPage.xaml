@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:XamarinRFID"
+             x:Class="XamarinRFID.LocateBagRFIDPage">
+
+  <Grid Padding="20,50,20,40" RowSpacing="30">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="4*" />
+      <RowDefinition Height="5*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="5*" />
+      <ColumnDefinition Width="5*" />
+    </Grid.ColumnDefinitions>
+
+    
+    <Entry Grid.Row="0"
+           Grid.Column="0" Grid.ColumnSpan="2"
+           VerticalOptions = "LayoutOptions.Center"
+           HorizontalOptions = "LayoutOptions.FillAndExpand"
+           Placeholder="Bagtag no."
+           x:Name="bagtagEntry"
+           Text="{Binding SearchEntry}"/>
+    
+    <BoxView Grid.Row="1" 
+           Grid.Column="0" Grid.ColumnSpan="2"
+             BackgroundColor="#bdc3c7"  />
+
+    <local:MyMap Grid.Row="2" Grid.Column="0"
+      Grid.ColumnSpan="2" x:Name="MyLocationMap" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+         IsShowingUser="true" MapType="Street"  />
+
+  </Grid>
+
+  </ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRFID.MenuPage">
+
+  <Grid Padding="0,0,0,40" ColumnSpacing="0" >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="3*" />
+      <ColumnDefinition Width="7*" />
+    </Grid.ColumnDefinitions>
+
+    <Frame  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#bdc3c7" >
+      <Label Text="RFID Scanner"
+              FontSize="32"   HorizontalTextAlignment="Center"
+              VerticalTextAlignment="Center" TextColor="#2980b9" /> 
+    </Frame>
+
+    <BoxView   Grid.Row="1" Grid.Column="0" BackgroundColor="#bdc3c7" />
+    <Image  Grid.Row="1" Grid.Column="0" Source="search1.png" />
+    <Button Text="Scan a bagtag on different scan points"
+            FontSize="Medium"
+            Grid.Row="1"
+            Grid.Column="1"
+            BackgroundColor="#bdc3c7"
+            BorderRadius="0"
+            Command ="{Binding ShowScanCommand}" />
+
+    <BoxView Grid.Row="2" Grid.Column="0" BackgroundColor="#bdc3c7" />
+    <Image  Grid.Row="2" Grid.Column="0"  Source="search2.png" />
+    <Button Text="Locate a bag using the “last seen” GPS coordinate"
+            FontSize="Medium"  BorderRadius="0"
+            Grid.Row="2"    Grid.Column="1"  BackgroundColor="#bdc3c7"
+            Command ="{Binding ShowLocateBagCommand}"/>
+
+    <BoxView Grid.Row="3" Grid.Column="0" BackgroundColor="#bdc3c7" />
+      <Image Source="search3.png" Grid.Row="3" Grid.Column="0" />
+    <Button Text="Locate a bag through RFID scanning"
+            FontSize="Medium" BorderRadius="0"
+            Grid.Row="3"    Grid.Column="1" BackgroundColor="#bdc3c7"
+            Command ="{Binding ShowLocateBagRFIDCommand}" />
+    
+    <Button Text="Logout" BorderRadius="0"
+            FontSize="Medium" BackgroundColor="#bdc3c7"
+            Grid.Row="4"    Grid.Column="1" 
+            Command ="{Binding LogoutCommand}"/>
+  </Grid>
+</ContentPage>
